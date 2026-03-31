@@ -13,9 +13,8 @@ dist-ssr
 data
 *.local
 .env
-todo.txt
 design
-plan
+plan.txt
 
 # Editor directories and files
 .vscode/*
