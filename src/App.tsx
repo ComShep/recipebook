@@ -4,18 +4,22 @@ import { Header } from "./components/Header/Header"
 import { Footer } from "./components/Footer/Footer"
 import { HomePage } from "./pages/HomePage/HomePage"
 import { ResipePage } from "./pages/ResipePage/ResipePage"
+import { AboutPage } from "./pages/AboutPage/AboutPage"
 
 export const App = () => {
 
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/recipebook">
 			<RecipeBookProvider>
-				<Header/>
-				<Routes>
-					<Route path="/recipebook" element={<HomePage/>}/>
-					<Route path="recipebook/recipe" element={<ResipePage/>}/>
-				</Routes>
-				<Footer/>
+				<main className="wrapper">
+					<Header />
+					<Routes>
+						<Route path="/" element={<HomePage />} />
+						<Route path="/recipes" element={<ResipePage />} />
+						<Route path="/about" element={<AboutPage />} />
+					</Routes>
+					<Footer />
+				</main>
 			</RecipeBookProvider>
 		</BrowserRouter>
 	)

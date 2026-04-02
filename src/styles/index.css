@@ -9,9 +9,9 @@ body {
 	background: var(--main-background-color);
 }
 
-.container {
+.wrapper {
 	max-width: 1330px;
 	width: 100%;
-	margin: 0 auto;
+	margin: 15px auto;
 	padding: 0 15px;
 }
