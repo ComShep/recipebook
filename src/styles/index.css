@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:600,700,800);
+
+@import './reset.css';
+@import './vars.css';
+
+body {
+	background: var(--main-background-color);
+}
+
+.container {
+	max-width: 1330px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+}
