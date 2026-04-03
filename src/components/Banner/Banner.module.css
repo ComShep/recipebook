@@ -1,0 +1,56 @@
+.bannerSection {
+	background-image: url('/recipebook/public/images/banner.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 32px;
+	height: 580px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16px;
+}
+
+.bannerContent {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px 10px;
+}
+
+.title{
+	font-family: var(--second-family);
+	font-weight: 800;
+	font-size: 80px;
+	line-height: 100%;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--background);
+	margin-bottom: 12px;
+}
+
+.text {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 140%;
+	letter-spacing: 0.01em;
+	text-align: center;
+	color: var(--background);
+	max-width: 450px;
+	margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+	.bannerSection {
+		height: 640px;
+	}
+	.title{
+		font-size: 38px;
+	}
+
+	.text {
+		font-size: 16px;
+	}
+}

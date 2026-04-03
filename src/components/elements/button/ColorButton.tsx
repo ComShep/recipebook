@@ -6,7 +6,7 @@ type Props = {
 	bcgColor: string
 }
 
-export const Button = ({name, bcgColor} : Props) => {
+export const ColorButton = ({name, bcgColor} : Props) => {
 
 	const btnClass = clsx ({
 		[styles.btn]: true,

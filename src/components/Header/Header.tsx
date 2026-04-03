@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router'
 import styles from './Header.module.css'
-import { Button } from '../elements/button/ColorButton'
+import { ColorButton } from '../elements/button/ColorButton'
 import { useState } from 'react'
 import clsx from 'clsx'
 
@@ -40,7 +40,7 @@ export const Header = () => {
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/about">ABOUT US</NavLink>
 				</nav>
 				<div>
-					<Button name='Add new recipe' bcgColor='orange' />
+					<ColorButton name='Add new recipe' bcgColor='color3' />
 				</div>
 			</div>
 		</header>
