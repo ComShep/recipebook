@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router'
 import styles from './Header.module.css'
-import { ColorButton } from '../elements/button/ColorButton'
+import { ColorButton } from '../assets//button/ColorButton'
 import { useState } from 'react'
 import clsx from 'clsx'
+import { IconLogo } from '../assets/icons/Icons'
 
 
 export const Header = () => {
@@ -26,7 +27,7 @@ export const Header = () => {
 		<header className={header}>
 			<div className={styles.topContainer}>
 				<div className={styles.logo}>
-					<img src='/recipebook/header/Logo.svg' alt="logo" />
+					<IconLogo/>
 					<div>Cooks <br /> Delight</div>
 				</div>
 				<button className={styles.burger} onClick={() => setisMenuOpen(!isMenuOpen)}>

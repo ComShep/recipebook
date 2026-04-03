@@ -1,6 +1,5 @@
-import { ColorButton } from "../elements/button/ColorButton"
+import { ColorButton } from "../assets//button/ColorButton"
 import styles from './Banner.module.css'
-
 
 export const Banner = () => {
 	return (

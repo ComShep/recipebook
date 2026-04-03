@@ -1,0 +1,12 @@
+.tag {
+	display: inline-block;
+	border-radius: 12px;
+	padding: 4px 8px;
+	background: var(--primary-color-3);
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 114%;
+	text-transform: uppercase;
+	color: var(--background);
+}
