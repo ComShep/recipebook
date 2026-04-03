@@ -12,11 +12,11 @@ export const Slider = () => {
 					<IconRight/>			
 				</div>
 			</div>
-			<div className="slider">
+			<div className={styles.slider}>
 				<RecipeCard/>
 				<RecipeCard/>
-				<IconLeftDisabled/>
-<IconRightDisabled/>
+				{/* <IconLeftDisabled/>
+<IconRightDisabled/> */}
 			</div>
 		</section>
 	)
