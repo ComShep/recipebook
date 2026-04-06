@@ -5,7 +5,7 @@ export const RecipeCard = () => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.image}>
-				<img src="/recipebook/public/images/RecipeImage.png" alt="picture"/>
+				<img src="./images/RecipeImage.png" alt="picture"/>
 			</div>
 			<div className={styles.info}>
 				<h3 className={styles.title}>Savory Herb-Infused Chicken</h3>
