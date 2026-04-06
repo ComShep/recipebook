@@ -1,9 +1,17 @@
+/* Импорты шрифтов */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:600,700,800);
 
+/* Импорты переменных и сброса стилей */
+
 @import './reset.css';
 @import './vars.css';
+
+/* Импорты стилей для слайдера */
+
+@import "swiper/css";
 
 body {
 	background: var(--main-background-color);

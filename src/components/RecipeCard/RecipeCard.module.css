@@ -56,7 +56,10 @@
 	color: var(--dark);
 }
 
-@media (max-width: 540px) {
+@media (max-width: 768px) {
+	.card {
+		max-width: 100%;
+	}
 	.title {
 		font-size: 21px;
 	}
