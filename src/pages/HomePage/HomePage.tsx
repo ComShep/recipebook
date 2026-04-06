@@ -1,5 +1,6 @@
 import { Banner } from "../../components/Banner/Banner"
 import { Explore } from "../../components/Explore/Explore"
+import { Recipes } from "../../components/Recipes/Recipes"
 import { Favorite } from "../../components/Slider/Favorite"
 
 export const HomePage = () => {
@@ -8,6 +9,7 @@ export const HomePage = () => {
 			<Banner/>
 			<Explore/>
 			<Favorite/>
+			<Recipes/>
 		</>
 	)
 }
