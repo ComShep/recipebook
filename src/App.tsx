@@ -32,11 +32,13 @@ export const App = () => {
 			<RecipeBookProvider>
 				<main className="wrapper">
 					<Header />
-					<Routes>
-						<Route path="/" element={<HomePage />} />
-						<Route path="/recipes" element={<ResipePage />} />
-						<Route path="/about" element={<AboutPage />} />
-					</Routes>
+					<div className="content">
+						<Routes>
+							<Route path="/" element={<HomePage />} />
+							<Route path="/recipes" element={<ResipePage />} />
+							<Route path="/about" element={<AboutPage />} />
+						</Routes>
+					</div>
 					<Footer />
 				</main>
 			</RecipeBookProvider>

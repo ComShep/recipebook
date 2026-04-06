@@ -20,6 +20,14 @@ body {
 .wrapper {
 	max-width: 1330px;
 	width: 100%;
-	margin: 15px auto;
-	padding: 0 15px;
+	margin: 0 auto;
+	padding: 15px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.content {
+	flex: 1;
 }
