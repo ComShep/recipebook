@@ -1,0 +1,83 @@
+.subscribeSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 64px 115px;
+	background-image: url('/recipebook/images/subscribe/subback.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 32px;
+	min-height: 480px;
+}
+
+.text {
+	font-family: var(--font-family);
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 100%;
+	color: rgba(255, 251, 242, 0.8);
+	max-width: 650px;
+	text-align: center;
+}
+.title {
+	font-family: var(--third-family);
+	font-weight: 800;
+	font-size: 80px;
+	line-height: 100%;
+	letter-spacing: -0.01em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #fffbf2;
+	margin: 12px 0px;
+}
+.email {
+	display: flex;
+	justify-content: center;
+	margin-top: 45px;
+	max-width: 425px;
+	height: 50px;
+	border-radius: 24px;
+	padding: 6px;
+	background: #fffbf2;
+}
+
+.email input {
+	font-family: var(--font-family);
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 114%;
+	letter-spacing: 0.01em;
+	color: rgba(38, 37, 34, 0.4);
+	margin: 0px 10px 0px 18px;
+}
+
+@media (max-width: 900px) {
+	.title {
+		font-size: 38px;
+	}
+
+	.text {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 768px) {
+	.subscribeSection {
+		padding: 64px 16px;
+	}
+	.email {
+		flex-direction: column;
+		background: none;
+		width: 100%;
+	}
+
+	.email input {
+		margin: 0 0 8px 0;
+		font-size: 16px;
+		background-color: #f0ebe1;
+		padding: 14px 24px;
+		border-radius: 24px;
+	}
+}

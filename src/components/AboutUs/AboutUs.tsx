@@ -4,7 +4,7 @@ import styles from './AboutUs.module.css'
 
 export const AboutUs = () => {
 	return (
-		<section className={styles.sliderSection}>
+		<section className={styles.aboutSection}>
 			<div className={styles.firstElement}>
 				<div className={styles.info}>
 					<Tag title="about us" />
