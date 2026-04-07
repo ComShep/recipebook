@@ -6,7 +6,7 @@ export const Author = () => {
 		<section className={styles.authorSection}>
 			<div className={styles.aboutAuthor}>
 				<div className={styles.left}>
-					<img src="./public/images/aboutPage/1.png" alt="author"/>
+					<img src="./images/aboutPage/1.png" alt="author"/>
 					<div className={styles.follow}>
 						<p>Follow me</p>
 						<div className={styles.social}>
@@ -24,14 +24,14 @@ export const Author = () => {
 				</div>
 			</div>
 			<div className={styles.grid}>
-				<img src="./public/images/aboutPage/2.png" alt="author"/>
-				<img src="./public/images/aboutPage/3.png" alt="author"/>
-				<img src="./public/images/aboutPage/4.png" alt="author"/>
-				<img src="./public/images/aboutPage/5.png" alt="author"/>
-				<img src="./public/images/aboutPage/6.png" alt="author"/>
-				<img src="./public/images/aboutPage/7.png" alt="author"/>
-				<img src="./public/images/aboutPage/8.png" alt="author"/>
-				<img src="./public/images/aboutPage/9.png" alt="author"/>
+				<img src="./images/aboutPage/2.png" alt="author"/>
+				<img src="./images/aboutPage/3.png" alt="author"/>
+				<img src="./images/aboutPage/4.png" alt="author"/>
+				<img src="./images/aboutPage/5.png" alt="author"/>
+				<img src="./images/aboutPage/6.png" alt="author"/>
+				<img src="./images/aboutPage/7.png" alt="author"/>
+				<img src="./images/aboutPage/8.png" alt="author"/>
+				<img src="./images/aboutPage/9.png" alt="author"/>
 			</div>
 		</section>
 	)
