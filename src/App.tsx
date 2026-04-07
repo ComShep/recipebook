@@ -6,27 +6,7 @@ import { HomePage } from "./pages/HomePage/HomePage"
 import { ResipePage } from "./pages/ResipePage/ResipePage"
 import { AboutPage } from "./pages/AboutPage/AboutPage"
 
-// export const App = () => {
-
-// 	return (
-// 		<BrowserRouter basename="/recipebook">
-// 			<RecipeBookProvider>
-// 				<main className="wrapper">
-// 					<Header />
-// 					<Routes>
-// 						<Route path="/" element={<HomePage />} />
-// 						<Route path="/recipes" element={<ResipePage />} />
-// 						<Route path="/about" element={<AboutPage />} />
-// 					</Routes>
-// 					<Footer />
-// 				</main>
-// 			</RecipeBookProvider>
-// 		</BrowserRouter>
-// 	)
-// }
-
 export const App = () => {
-
 	return (
 		<HashRouter>
 			<RecipeBookProvider>

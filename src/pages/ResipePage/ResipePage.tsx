@@ -1,8 +1,8 @@
-import { useRecipeBookContext } from "../../context/RecipeContext";
+import { useRecipes } from "../../hooks/useRecipes";
 
 
 export const ResipePage = () => {
-	const {recipes, isLoading} = useRecipeBookContext();
+	const {recipes, isLoading} = useRecipes();
 
 	console.log(recipes)
 	console.log(isLoading)

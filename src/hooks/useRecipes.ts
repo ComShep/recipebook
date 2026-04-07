@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { getRecipesList } from "../api/api";
-import type { Resipe } from "../types/types";
+import { useRecipeBookContext } from "../context/RecipeContext";
 
-export const useRecipeManager = () => {
-	const [recipes, setRecipes] = useState<Array<Resipe> | null>(null);
-	const [isLoading, setIsLoading] = useState<boolean>(false);
+export const useRecipes = () => {
+	const {recipes, setRecipes, isLoading, setIsLoading} = useRecipeBookContext();
 
 	const loadRecipesData = async () => {
 		setIsLoading(true);
