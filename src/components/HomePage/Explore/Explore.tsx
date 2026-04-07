@@ -1,6 +1,7 @@
-import { Button } from "../assets/button/Button"
-import { IconBreakfest, IconDessert, IconDinner, IconLunch, IconQuickBite } from "../assets/icons/Icons"
-import { Tag } from "../assets/tag/Tag"
+import { Button } from "../../assets/button/Button"
+import { IconBreakfest, IconDessert, IconDinner, IconLunch, IconQuickBite } from "../../assets/icons/Icons"
+import { Tag } from "../../assets/tag/Tag"
+
 import styles from './Explore.module.css'
 
 export const Explore = () => {

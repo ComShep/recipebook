@@ -1,5 +1,6 @@
-import { Button } from '../assets/button/Button'
-import { Tag } from '../assets/tag/Tag'
+
+import { Button } from '../../assets/button/Button'
+import { Tag } from '../../assets/tag/Tag'
 import styles from './AboutUs.module.css'
 
 export const AboutUs = () => {
