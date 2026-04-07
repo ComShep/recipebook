@@ -2,7 +2,7 @@ import { Recipes } from "../../components/Recipes/Recipes";
 import { useRecipes } from "../../hooks/useRecipes";
 
 
-export const ResipePage = () => {
+export const RecipePage = () => {
 	const {recipes, isLoading} = useRecipes();
 
 	console.log(recipes)

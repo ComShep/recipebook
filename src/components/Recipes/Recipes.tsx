@@ -24,7 +24,7 @@ export const Recipes = ({recipes}: Props) => {
 			</div>
 			<div className={styles.grid}>
 				{recipes.map(recipe => (
-					<RecipeCard recipe={recipe}/>
+					<RecipeCard recipe={recipe} key={recipe.id}/>
 				))}
 			</div>
 		</section>

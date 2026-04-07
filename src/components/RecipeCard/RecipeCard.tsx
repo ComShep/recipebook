@@ -1,6 +1,7 @@
 import { Button } from '../assets/button/Button'
 import styles from './RecipeCard.module.css'
 import type { Recipe } from '../../types/types'
+import { Link } from 'react-router'
 
 type Props = {
 	recipe: Recipe
@@ -21,7 +22,7 @@ export const RecipeCard = ({recipe}: Props) => {
 					<div className={styles.attributes}>
 						<span>{recipe.cookingTime} Min</span> - <span>{recipe.servings} serves</span>
 					</div>
-					<Button name='view recipe'/>
+					<Link to={`/recipes/${recipe.id}`}><Button name='view recipe'/></Link> 
 				</div>
 			</div>
 		</div>
