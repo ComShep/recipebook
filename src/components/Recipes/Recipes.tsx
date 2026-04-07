@@ -1,8 +1,20 @@
+import type { Recipe } from '../../types/types'
 import { Tag } from '../assets/tag/Tag'
 import { RecipeCard } from '../RecipeCard/RecipeCard'
 import styles from './Recipes.module.css'
 
-export const Recipes = () => {
+type Props = {
+	recipes: Array<Recipe> | null
+}
+
+export const Recipes = ({recipes}: Props) => {
+
+	if (recipes === null) {
+		return (
+			<div>рецептов нет</div>
+		)
+	}
+
 	return (
 		<section className={styles.recipesSection}>
 			<div className={styles.header}>
@@ -11,13 +23,9 @@ export const Recipes = () => {
 				<p className={styles.text}>With our diverse collection of recipes we have something to satisfy every palate.</p>
 			</div>
 			<div className={styles.grid}>
-				<RecipeCard/>
-				<RecipeCard/>
-				<RecipeCard/>
-				<RecipeCard/>
-				<RecipeCard/>
-				<RecipeCard/>
-				<RecipeCard/>
+				{recipes.map(recipe => (
+					<RecipeCard recipe={recipe}/>
+				))}
 			</div>
 		</section>
 	)

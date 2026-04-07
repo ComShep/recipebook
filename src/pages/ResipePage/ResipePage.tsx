@@ -1,3 +1,4 @@
+import { Recipes } from "../../components/Recipes/Recipes";
 import { useRecipes } from "../../hooks/useRecipes";
 
 
@@ -9,6 +10,6 @@ export const ResipePage = () => {
 	// console.log(isLoading)
 	// console.log('render')
 	return (
-		<div>ResipePage</div>
+		<Recipes recipes={recipes}/>
 	)
 }

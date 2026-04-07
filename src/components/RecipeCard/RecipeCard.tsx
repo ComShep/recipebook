@@ -1,20 +1,25 @@
 import { Button } from '../assets/button/Button'
 import styles from './RecipeCard.module.css'
+import type { Recipe } from '../../types/types'
 
-export const RecipeCard = () => {
+type Props = {
+	recipe: Recipe
+}
+
+export const RecipeCard = ({recipe}: Props) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.image}>
-				<img src="./images/RecipeImage.png" alt="picture"/>
+				<img src={recipe.image} alt="picture"/>
 			</div>
 			<div className={styles.info}>
-				<h3 className={styles.title}>Savory Herb-Infused Chicken</h3>
+				<h3 className={styles.title}>{recipe.title}</h3>
 				<p className={styles.description}>
-					Indulge in the rich and savory symphony of flavors with our Savory Herb-Infused Chicken
+					{recipe.description}
 				</p>
 				<div className={styles.footer}>
 					<div className={styles.attributes}>
-						<span>40 Min</span> - <span>easy prep</span> - <span>3 serves</span>
+						<span>{recipe.cookingTime} Min</span> - <span>{recipe.servings} serves</span>
 					</div>
 					<Button name='view recipe'/>
 				</div>

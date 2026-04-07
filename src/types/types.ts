@@ -1,4 +1,4 @@
-export type Resipe = {
+export type Recipe = {
 	id: string,
 	category: string,
 	cookingTime: number,
