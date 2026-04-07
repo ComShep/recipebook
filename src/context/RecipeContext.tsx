@@ -1,13 +1,16 @@
 import { createContext, useContext, type ReactNode } from "react";
+import { useRecipeManager } from "../hooks/useRecipeManager";
+import type { Resipe } from "../types/types";
 
 type RecipeBookContextType = {
-
+	recipes: Array<Resipe> | null,
+	isLoading: boolean
 }
 
 const RecipeBookContext = createContext<RecipeBookContextType | undefined>(undefined);
 
 export const RecipeBookProvider = ({children}: {children: ReactNode}) => {
-	const contextManager = {};
+	const contextManager = useRecipeManager();
 
 	return (
 		<RecipeBookContext.Provider value={contextManager}>

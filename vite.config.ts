@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
 	server: {
-		// hmr: false,
+		hmr: false,
 	},
 	plugins: [react()],
 	base: '/recipebook/',
