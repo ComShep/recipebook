@@ -1,22 +1,8 @@
-export type Recipe = {
-	id: string,
-	category: string,
-	cookingTime: number,
-	description: string,
-	equipment: Array<string>,
-	image: string,
-	ingredients: Array<string>,
-	instructions: string,
-	nutritional: Nutritional,
-	servings: number,
-	title: string
-}
-
-export type ResipesResponce = {
+export interface ResipesResponce {
 	[key: string]: ResipeDetailResponce
 }
 
-export type ResipeDetailResponce = {
+export interface ResipeDetailResponce {
 	category: string,
 	cookingTime: number,
 	description: string,
@@ -29,7 +15,11 @@ export type ResipeDetailResponce = {
 	title: string
 }
 
-type Nutritional = {
+export interface Recipe extends ResipeDetailResponce {
+	id: string
+}
+
+interface Nutritional {
 	calories: number,
 	carbohydrates: string,
 	protein: string,
