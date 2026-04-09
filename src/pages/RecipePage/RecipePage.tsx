@@ -5,10 +5,12 @@ import { useRecipes } from "../../hooks/useRecipes";
 export const RecipePage = () => {
 	const {recipes, isLoading} = useRecipes();
 
-	console.log(recipes)
-	console.log(isLoading)
-	// console.log(isLoading)
-	// console.log('render')
+	if (isLoading) {
+		return (
+			<div>Loading...</div>
+		)
+	}
+
 	return (
 		<Recipes recipes={recipes}/>
 	)

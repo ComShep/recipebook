@@ -13,13 +13,13 @@ export const HomePage = () => {
 
 	if (isLoadingMain) {
 		return (
-			<div>Загрузка</div>
+			<div>Loading...</div>
 		)
 	}
 
 	if (main === null) {
 		return (
-			<div>Страница не загружена</div>
+			<div>Page not found</div>
 		)
 	}
 
