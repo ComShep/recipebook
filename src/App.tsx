@@ -6,6 +6,7 @@ import { HomePage } from "./pages/HomePage/HomePage"
 import { RecipePage } from "./pages/RecipePage/RecipePage"
 import { AboutPage } from "./pages/AboutPage/AboutPage"
 import { RecipeDetailPage } from "./pages/RecipeDetailPage/RecipeDetailPage"
+import { CookingTipsPage } from "./pages/CookingTipsPage/CookingTipsPage"
 
 export const App = () => {
 	return (
@@ -19,6 +20,7 @@ export const App = () => {
 							<Route path="/recipes" element={<RecipePage />} />
 							<Route path="/about" element={<AboutPage />} />
 							<Route path="/recipes/:id" element={<RecipeDetailPage />} />
+							<Route path="/coocking-tips" element={<CookingTipsPage />} />
 						</Routes>
 					</div>
 					<Footer />

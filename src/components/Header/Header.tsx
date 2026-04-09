@@ -9,7 +9,7 @@ import { IconBurger, IconClose, IconLogo } from '../assets/icons/Icons'
 
 
 export const Header = () => {
-	const [isMenuOpen, setisMenuOpen] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const bottomContainer = clsx({
 		[styles.bottomContainer]: true,
@@ -22,7 +22,7 @@ export const Header = () => {
 	})
 
 	const handleClickClose = () => {
-		setisMenuOpen(false)
+		setIsMenuOpen(false)
 	}
 
 	return (
@@ -32,7 +32,7 @@ export const Header = () => {
 					<IconLogo/>
 					<div>Cooks <br /> Delight</div>
 				</div>
-				<button className={styles.burger} onClick={() => setisMenuOpen(!isMenuOpen)}>
+				<button className={styles.burger} onClick={() => setIsMenuOpen(!isMenuOpen)}>
 					{isMenuOpen ? <IconClose/> : <IconBurger/>}
 				</button>
 			</div>
@@ -40,10 +40,11 @@ export const Header = () => {
 				<nav className={styles.menu}>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/">HOME</NavLink>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/recipes">RESIPES</NavLink>
+					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/coocking-tips">cooking tips</NavLink>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/about">ABOUT US</NavLink>
 				</nav>
 				<div>
-					<ColorButton name='Add new recipe' bcgColor='color3' />
+					<ColorButton name='Subscribe' bcgColor='dark' />
 				</div>
 			</div>
 		</header>
