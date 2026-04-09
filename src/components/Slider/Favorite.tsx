@@ -1,28 +1,28 @@
-import { useRef, useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import type { Swiper as SwiperType } from 'swiper';
+// import { useRef, useState } from 'react';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import type { Swiper as SwiperType } from 'swiper';
 
-import { RecipeCard } from '../RecipeCard/RecipeCard';
-import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
+// import { RecipeCard } from '../RecipeCard/RecipeCard';
+// import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
 
 import styles from './Favorite.module.css';
 
 export const Favorite = () => {
-	const swiperRef = useRef<SwiperType>(null);
-	const [isBegining, setIsBegining] = useState(true);
-	const [isEnd, setIsEnd] =useState(false)
+	// const swiperRef = useRef<SwiperType>(null);
+	// const [isBegining, setIsBegining] = useState(true);
+	// const [isEnd, setIsEnd] =useState(false)
 
-	const handleNext= () => {
-		swiperRef.current?.slideNext();
-	}
+	// const handleNext= () => {
+	// 	swiperRef.current?.slideNext();
+	// }
 
-	const handlePrev = () => {
-		swiperRef.current?.slidePrev();
-	}
+	// const handlePrev = () => {
+	// 	swiperRef.current?.slidePrev();
+	// }
 
 	return (
 		<section className={styles.sliderSection}>
-			<div className={styles.header}>
+			{/* <div className={styles.header}>
 				<h2 className={styles.title}>favorite recipes</h2>
 				<div className={styles.arrows}>
 					<button onClick={handlePrev} disabled={isBegining}>
@@ -58,7 +58,7 @@ export const Favorite = () => {
 					<SwiperSlide><RecipeCard /></SwiperSlide>
 					<SwiperSlide><RecipeCard /></SwiperSlide>
 				</Swiper>
-			</div>
+			</div> */}
 		</section>
 	)
 }
