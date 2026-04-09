@@ -1,9 +1,9 @@
-import type { ResipeDetailResponce, ResipesResponce } from "../types/types";
+import type { MainResponce, RecipeDetailResponce, RecipesResponce } from "../types/types";
 
 
 const url = "https://vue-with-http-6c4e8-default-rtdb.europe-west1.firebasedatabase.app/recipes-book/";
 
-export const getRecipesList = async (): Promise<ResipesResponce> => {
+export const getRecipesList = async (): Promise<RecipesResponce> => {
 	const response = await fetch(`${url}recipes.json`);
 
 	const data = await response.json();
@@ -11,8 +11,16 @@ export const getRecipesList = async (): Promise<ResipesResponce> => {
 	return data;
 }
 
-export const getRecipeDetail = async (id: string): Promise<ResipeDetailResponce> => {
+export const getRecipeDetail = async (id: string): Promise<RecipeDetailResponce> => {
 	const response = await fetch(`${url}recipes/${id}.json`);
+
+	const data = await response.json();
+
+	return data;
+}
+
+export const getMain = async (): Promise<MainResponce> => {
+	const response = await fetch(`${url}main.json`);
 
 	const data = await response.json();
 

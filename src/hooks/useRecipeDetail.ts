@@ -11,7 +11,6 @@ export const useRecipeDetail = (id: string | undefined) => {
 		if (id === undefined) {
 			return;
 		}
-
 		try {
 			const data = await getRecipeDetail(id);
 			const recipe = {
