@@ -1,5 +1,11 @@
+import { WelcomeCoockingTips } from "../../components/CookingTipsPage/WelcomeCoockingTips"
+import { Subscribe } from "../../components/Subscribe/Subscribe"
+
 export const CookingTipsPage = () => {
 	return (
-		<div>CookingTipsPage</div>
+		<>
+			<WelcomeCoockingTips/>
+			<Subscribe/>
+		</>
 	)
 }
