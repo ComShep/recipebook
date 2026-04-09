@@ -170,8 +170,17 @@
 		padding: 64px 16px;
 	}
 
+	.recipeInfo {
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
 	.overview img{
 		height: 480px;
+	}
+
+	.rightSide {
+		padding: 0;
 	}
 
 	.overviewTitle {
@@ -184,5 +193,13 @@
 
 	.stats {
 		margin: 20px 0;
+	}
+
+	.instructionTitle {
+		font-size: 26px;;
+	}
+
+	.instructionText {
+		font-size: 14px;
 	}
 }
