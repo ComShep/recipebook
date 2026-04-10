@@ -10,6 +10,11 @@ export const useMain = () => {
 	const loadMainData = async () => {
 		setIsloadingMain(true);
 
+		if (main !== null) {
+			setIsloadingMain(false);
+			return;
+		}
+		
 		try {
 			const data = await getFetchData<MainResponse>('main');
 			const dataOfFavorite = transformResponse(data.favorite);

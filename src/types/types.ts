@@ -1,13 +1,23 @@
 export interface MainResponse {
-	favorite: RecipesResponce,
-	recipes: RecipesResponce
+	favorite: RecipesSectionResponse,
+	recipes: RecipesSectionResponse
 }
 
-export interface RecipesResponce {
-	[key: string]: RecipeDetailResponce
+export interface CookingTipsResponse {
+	mastering: CookingTipsSectionResponse,
+	nourishing: CookingTipsSectionResponse,
+	tips_and_tricks: CookingTipsSectionResponse
 }
 
-export interface RecipeDetailResponce {
+export interface RecipesSectionResponse {
+	[key: string]: RecipeDetailResponse
+}
+
+export interface CookingTipsSectionResponse {
+	[key: string]: CookingTipsDetailResponse
+}
+
+export interface RecipeDetailResponse {
 	category: string,
 	cookingTime: number,
 	description: string,
@@ -20,7 +30,21 @@ export interface RecipeDetailResponce {
 	title: string
 }
 
-export interface Recipe extends RecipeDetailResponce {
+export interface CookingTipsDetailResponse {
+	date: string,
+	description: string,
+	equipment: Array<string>,
+	image: string,
+	instructions: string,
+	time: number,
+	title: string
+}
+
+export interface CookingTipsDetail extends CookingTipsDetailResponse {
+	id: string
+}
+
+export interface Recipe extends RecipeDetailResponse {
 	id: string
 }
 
@@ -29,22 +53,34 @@ export interface Main {
 	recipes: Array<Recipe>
 }
 
+export interface CoockingTips {
+	mastering: Array<CookingTipsDetail>,
+	nourishing: Array<CookingTipsDetail>,
+	tips_and_tricks: Array<CookingTipsDetail>
+}
+
+
 export interface RecipeBookContextType {
 	main: Main | null,
 	recipes: Array<Recipe> | null,
 	recipeDetail: Recipe | null,
+	cookingTips: CoockingTips | null,
+
 	setMain: (main: Main | null) => void,
 	setRecipes: (recipes: Array<Recipe> | null) => void,
 	setRecipeDetail: (recipe: Recipe | null) => void,
+	setCookingTips: (cookingTips: CoockingTips | null) => void,
+
 	isLoadingMain: boolean,
 	isLoading: boolean,
 	isLoadingDetail: boolean,
+	isLoadingCookingTips: boolean,
+
 	setIsloadingMain: (loading: boolean) => void,
 	setIsLoading: (loading: boolean) => void,
 	setIsLoadingDetail: (loading: boolean) => void
+	setIsLoadingCookingTips: (loading: boolean) => void
 }
-
-
 
 interface Nutritional {
 	calories: number,
