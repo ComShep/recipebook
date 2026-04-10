@@ -1,6 +1,7 @@
 import { useEffect } from "react"
-import { getRecipesList } from "../api/api";
+import { getFetchData } from "../api/api";
 import { useRecipeBookContext } from "../context/RecipeContext";
+import type { RecipesResponce } from "../types/types";
 
 export const useRecipes = () => {
 	const {recipes, setRecipes, isLoading, setIsLoading} = useRecipeBookContext();
@@ -8,7 +9,8 @@ export const useRecipes = () => {
 	const loadRecipesData = async () => {
 		setIsLoading(true);
 		try {
-			const data = await getRecipesList();
+			
+			const data = await getFetchData<RecipesResponce>('recipes');
 			const arrayOfData = Object.entries(data);
 			const arrayOfRecipes = arrayOfData.map(([id, recipe]) => ({
 				id: id,

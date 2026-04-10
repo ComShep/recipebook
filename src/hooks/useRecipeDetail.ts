@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useRecipeBookContext } from "../context/RecipeContext"
 import { getRecipeDetail } from "../api/api";
+import type { RecipeDetailResponce } from "../types/types";
 
 export const useRecipeDetail = (id: string | undefined) => {
 	const {recipeDetail, setRecipeDetail, isLoadingDetail, setIsLoadingDetail} = useRecipeBookContext();
@@ -12,7 +13,7 @@ export const useRecipeDetail = (id: string | undefined) => {
 			return;
 		}
 		try {
-			const data = await getRecipeDetail(id);
+			const data = await getRecipeDetail<RecipeDetailResponce>(id);
 			const recipe = {
 				id: id,
 				...data

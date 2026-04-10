@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { getMain } from "../api/api";
+import { getFetchData} from "../api/api";
 import { useRecipeBookContext } from "../context/RecipeContext";
-import type { Recipe, RecipesResponce } from "../types/types";
+import type { MainResponce, Recipe, RecipesResponce } from "../types/types";
 
 
 const transformResponse = (data: RecipesResponce): Recipe[] => {
@@ -18,7 +18,8 @@ export const useMain = () => {
 		setIsloadingMain(true);
 
 		try {
-			const data = await getMain();
+			// const data = await getMain();
+			const data = await getFetchData<MainResponce>('main');
 			const dataOfFavorite = transformResponse(data.favorite);
 			const dataOfRecipes = transformResponse(data.recipes);
 			setMain({
