@@ -28,12 +28,14 @@ export const Header = () => {
 	return (
 		<header className={header}>
 			<div className={styles.topContainer}>
-				<div className={styles.logo}>
-					<IconLogo/>
-					<div>Cooks <br /> Delight</div>
-				</div>
+				<NavLink to="/">
+					<div className={styles.logo}>
+						<IconLogo />
+						<div>Cooks <br /> Delight</div>
+					</div>
+				</NavLink>
 				<button className={styles.burger} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-					{isMenuOpen ? <IconClose/> : <IconBurger/>}
+					{isMenuOpen ? <IconClose /> : <IconBurger />}
 				</button>
 			</div>
 			<div className={bottomContainer}>

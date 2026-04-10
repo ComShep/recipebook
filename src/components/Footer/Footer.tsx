@@ -8,10 +8,12 @@ export const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.top}>
-				<div className={styles.logo}>
-					<IconLogoFooter />
-					<div>Cooks <br /> Delight</div>
-				</div>
+				<NavLink to="/">
+					<div className={styles.logo}>
+						<IconLogoFooter />
+						<div>Cooks <br /> Delight</div>
+					</div>
+				</NavLink>
 				<nav className={styles.menu}>
 					<NavLink to="/">HOME</NavLink>
 					<NavLink to="/recipes">RESIPES</NavLink>
@@ -19,10 +21,10 @@ export const Footer = () => {
 					<NavLink to="/about">ABOUT US</NavLink>
 				</nav>
 				<div className={styles.social}>
-					<a href="#"><IconTikTok/></a>
-					<a href="#"><IconFacebook/></a>
-					<a href="#"><IconInst/></a>
-					<a href="#"><IconYoutube/></a>
+					<a href="#"><IconTikTok /></a>
+					<a href="#"><IconFacebook /></a>
+					<a href="#"><IconInst /></a>
+					<a href="#"><IconYoutube /></a>
 				</div>
 			</div>
 			<div className={styles.bottom}>

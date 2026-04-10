@@ -7,10 +7,12 @@ import { RecipePage } from "./pages/RecipePage/RecipePage"
 import { AboutPage } from "./pages/AboutPage/AboutPage"
 import { RecipeDetailPage } from "./pages/RecipeDetailPage/RecipeDetailPage"
 import { CookingTipsPage } from "./pages/CookingTipsPage/CookingTipsPage"
+import { ScrollToTop } from "./components/utils/ScrollToTop"
 
 export const App = () => {
 	return (
 		<HashRouter>
+			<ScrollToTop />
 			<RecipeBookProvider>
 				<main className="wrapper">
 					<Header />
