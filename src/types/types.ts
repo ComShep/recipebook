@@ -1,4 +1,4 @@
-export interface MainResponce {
+export interface MainResponse {
 	favorite: RecipesResponce,
 	recipes: RecipesResponce
 }
