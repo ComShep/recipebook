@@ -1,6 +1,9 @@
 import { WelcomeCoockingTips } from "../../components/CookingTipsPage/WelcomeCoockingTips"
 import { Subscribe } from "../../components/Subscribe/Subscribe"
 import { useCookingTips } from "../../hooks/useCookingTips"
+import { Slider } from "../../components/Slider/Slider"
+import { CookingTipsCard } from "../../CookingTipsCard/CookingTipsCard"
+
 
 export const CookingTipsPage = () => {
 	const { cookingTips, isLoadingCookingTips } = useCookingTips();
@@ -22,6 +25,13 @@ export const CookingTipsPage = () => {
 	return (
 		<>
 			<WelcomeCoockingTips />
+			<Slider
+				sliderTitle="Mastering the Basics"
+				slidesInfo={cookingTips.mastering}
+				renderCard={(recipe) => {
+					return <CookingTipsCard cardInfo={recipe} />
+				}}
+			/>
 			<Subscribe />
 		</>
 	)

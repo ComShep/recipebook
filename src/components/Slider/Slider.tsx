@@ -1,17 +1,21 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, type ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
-import { RecipeCard } from '../RecipeCard/RecipeCard';
 import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
 import styles from './Slider.module.css';
-import type { Recipe } from '../../types/types';
 
-type Props = {
-	slidesInfo: Array<Recipe> | null,
-	sliderTitle: string
-}
+type SlideData = {
+  id: string | number;
+  [key: string]: any;
+};
 
-export const Slider = ({slidesInfo, sliderTitle}: Props) => {
+type Props<T extends SlideData> = {
+  slidesInfo: Array<T> | null;
+  sliderTitle: string;
+  renderCard: (slideItem: T) => ReactNode; 
+};
+
+export const Slider = <T extends SlideData>({slidesInfo, sliderTitle, renderCard}: Props<T>) => {
 	const swiperRef = useRef<SwiperType>(null);
 	const [isBegining, setIsBegining] = useState(true);
 	const [isEnd, setIsEnd] =useState(false)
@@ -46,7 +50,6 @@ export const Slider = ({slidesInfo, sliderTitle}: Props) => {
 				<Swiper
 					spaceBetween={16}
 					slidesPerView={1}
-					autoHeight={true}
 					onSwiper={(swiper) => {
 						swiperRef.current = swiper;
 						setIsBegining(swiper.isBeginning)
@@ -62,7 +65,11 @@ export const Slider = ({slidesInfo, sliderTitle}: Props) => {
 						}
 					}}
 				>	
-					{slidesInfo.map(slideItem => <SwiperSlide><RecipeCard key={slideItem.id} cardInfo={slideItem}/></SwiperSlide>)}
+					{slidesInfo.map(slideItem => 
+						<SwiperSlide key={slideItem.id}>
+							{renderCard(slideItem)}
+						</SwiperSlide>
+					)}
 				</Swiper>
 			</div>
 		</section>
