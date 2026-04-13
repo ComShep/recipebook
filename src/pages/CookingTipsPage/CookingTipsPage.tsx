@@ -31,6 +31,8 @@ export const CookingTipsPage = () => {
 				renderCard={(recipe) => {
 					return <CookingTipsCard cardInfo={recipe} />
 				}}
+				rows={2}
+				perView={3}
 			/>
 			<Subscribe />
 		</>
