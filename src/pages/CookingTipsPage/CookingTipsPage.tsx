@@ -33,6 +33,26 @@ export const CookingTipsPage = () => {
 				}}
 				rows={2}
 				perView={3}
+				border={false}
+			/>
+			<Slider
+				sliderTitle="Nourishing Every Palate"
+				slidesInfo={cookingTips.nourishing}
+				renderCard={(recipe) => {
+					return <CookingTipsCard cardInfo={recipe} />
+				}}
+				perView={3}
+				backColor={true}
+			/>
+			<Slider
+				sliderTitle="TIps & tricks"
+				slidesInfo={cookingTips.tips_and_tricks}
+				renderCard={(recipe) => {
+					return <CookingTipsCard cardInfo={recipe} />
+				}}
+				rows={2}
+				perView={3}
+				border={false}
 			/>
 			<Subscribe />
 		</>

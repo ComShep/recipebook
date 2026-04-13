@@ -1,13 +1,15 @@
 import { useRef, useState, type ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import type { Swiper as SwiperType } from 'swiper';
-import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
-import styles from './Slider.module.css';
 import { Grid, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperType } from 'swiper';
 
+import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
+
+import styles from './Slider.module.css';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import clsx from 'clsx';
 
 type SlideData = {
 	id: string | number;
@@ -19,13 +21,21 @@ type Props<T extends SlideData> = {
 	sliderTitle: string;
 	renderCard: (slideItem: T) => ReactNode;
 	rows?: number;
-	perView?: number
+	perView?: number;
+	border?: boolean;
+	backColor?: boolean
 };
 
-export const Slider = <T extends SlideData>({ slidesInfo, sliderTitle, renderCard, rows = 1, perView = 2 }: Props<T>) => {
+export const Slider = <T extends SlideData>({ slidesInfo, sliderTitle, renderCard, rows = 1, perView = 2, border = true, backColor = false }: Props<T>) => {
 	const swiperRef = useRef<SwiperType>(null);
 	const [isBegining, setIsBegining] = useState(true);
 	const [isEnd, setIsEnd] = useState(false)
+
+	const sliderSection = clsx({
+		[styles.sliderSection]: true,
+		[styles.sliderSectionBorder]: border,
+		[styles.sliderSectionBackground]: backColor
+	})
 
 	const handleNext = () => {
 		swiperRef.current?.slideNext();
@@ -40,7 +50,7 @@ export const Slider = <T extends SlideData>({ slidesInfo, sliderTitle, renderCar
 	}
 
 	return (
-		<section className={styles.sliderSection}>
+		<section className={sliderSection}>
 			<div className={styles.header}>
 				<h2 className={styles.title}>{sliderTitle}</h2>
 				<div className={styles.arrows}>
