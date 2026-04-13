@@ -9,8 +9,6 @@ import { useMain } from "../../hooks/useMain"
 export const HomePage = () => {
 	const {main, isLoadingMain} = useMain();
 
-	console.log(main)
-
 	if (isLoadingMain) {
 		return (
 			<div>Loading...</div>
@@ -27,7 +25,7 @@ export const HomePage = () => {
 		<>
 			<Banner/>
 			<Explore/>
-			<Slider recipes={main.favorite}/>
+			<Slider slidesInfo={main.favorite} sliderTitle='featured recipes'/>
 			<Recipes recipes={main.recipes}/>
 			<AboutUs/>
 			<Subscribe/>

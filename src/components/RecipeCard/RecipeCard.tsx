@@ -4,25 +4,25 @@ import type { Recipe } from '../../types/types'
 import { Link } from 'react-router'
 
 type Props = {
-	recipe: Recipe
+	cardInfo: Recipe
 }
 
-export const RecipeCard = ({recipe}: Props) => {
+export const RecipeCard = ({cardInfo}: Props) => {
 	return (
 		<div className={styles.card}>
 			<div className={styles.image}>
-				<img src={recipe.image} alt="picture"/>
+				<img src={cardInfo.image} alt="picture"/>
 			</div>
 			<div className={styles.info}>
-				<h3 className={styles.title}>{recipe.title}</h3>
+				<h3 className={styles.title}>{cardInfo.title}</h3>
 				<p className={styles.description}>
-					{recipe.description}
+					{cardInfo.description}
 				</p>
 				<div className={styles.footer}>
 					<div className={styles.attributes}>
-						<span>{recipe.cookingTime} Min</span> - <span>{recipe.servings} serves</span>
+						<span>{cardInfo.cookingTime} Min</span> - <span>{cardInfo.servings} serves</span>
 					</div>
-					<Link to={`/recipes/${recipe.id}`}><Button name='view recipe'/></Link> 
+					<Link to={`/recipes/${cardInfo.id}`}><Button name='view recipe'/></Link> 
 				</div>
 			</div>
 		</div>

@@ -1,13 +1,17 @@
 .card {
-	min-width: 311px;
-	max-width: 625px;
-	min-height: 420px;
+	width: 100%;
+	height: 100%;
 	border-radius: 24px;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: var(--light);
 }
+
 .image {
 	height: 234px;
 	overflow: hidden;
+	flex-shrink: 0;
 }
 
 .image img {
@@ -18,11 +22,15 @@
 }
 
 .info {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
 	border: 1px solid rgba(38, 37, 34, 0.16);
+	border-top: none;
 	border-radius: 0 0 24px 24px;
 	padding: 24px 24px 16px;
-	background: var(--light);
 }
+
 .title {
 	font-family: var(--second-family);
 	font-weight: 700;
@@ -31,7 +39,9 @@
 	letter-spacing: -0.01em;
 	color: var(--dark);
 	margin-bottom: 12px;
+	flex-shrink: 0;
 }
+
 .description {
 	font-family: var(--font-family);
 	font-weight: 300;
@@ -39,13 +49,17 @@
 	line-height: 140%;
 	letter-spacing: 0.01em;
 	color: var(--dark);
-	margin-bottom: 40px;
+	margin-bottom: 24px;
+	flex: 1;
 }
+
 .footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-shrink: 0;
 }
+
 .attributes {
 	font-family: var(--font-family);
 	font-weight: 500;
@@ -57,9 +71,6 @@
 }
 
 @media (max-width: 768px) {
-	.card {
-		max-width: 100%;
-	}
 	.title {
 		font-size: 21px;
 	}
@@ -71,5 +82,6 @@
 	.footer {
 		flex-direction: column;
 		gap: 16px;
+		align-items: flex-start;
 	}
 }

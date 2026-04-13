@@ -9,12 +9,15 @@ export const RecipeDetailPage = () => {
 	const { id } = useParams();
 	const { recipeDetail, isLoadingDetail } = useRecipeDetail(id);
 
-	console.log(recipeDetail)
-	console.log(isLoadingDetail)
-
 	if (isLoadingDetail) {
 		return (
-			<div>Загрузка</div>
+			<div>Loading</div>
+		)
+	}
+
+		if (recipeDetail === null) {
+		return (
+			<div>Recipe not found</div>
 		)
 	}
 
@@ -39,16 +42,16 @@ export const RecipeDetailPage = () => {
 					<div className={styles.rightSideItem}>
 						<h3 className={styles.itemTitle}>Ingredients</h3>
 						<ul className={styles.list}>
-							{recipeDetail?.ingredients.map(ingedient => {
-								return <li className={styles.item}>{ingedient}</li>
+							{recipeDetail.ingredients.map((ingedient, index) => {
+								return <li key={index} className={styles.item}>{ingedient}</li>
 							})}
 						</ul>
 					</div>
 					<div className={styles.rightSideItem}>
 						<h3 className={styles.itemTitle}>Equipment Needed for Preparation</h3>
 						<ul className={styles.list}>
-							{recipeDetail?.equipment.map(equipment => {
-								return <li className={styles.item}>{equipment}</li>
+							{recipeDetail.equipment.map((equipment, index) => {
+								return <li key={index} className={styles.item}>{equipment}</li>
 							})}
 						</ul>
 					</div>

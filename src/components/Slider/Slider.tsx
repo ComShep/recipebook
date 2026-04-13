@@ -7,10 +7,11 @@ import styles from './Slider.module.css';
 import type { Recipe } from '../../types/types';
 
 type Props = {
-	recipes: Array<Recipe> | null
+	slidesInfo: Array<Recipe> | null,
+	sliderTitle: string
 }
 
-export const Slider = ({recipes}: Props) => {
+export const Slider = ({slidesInfo, sliderTitle}: Props) => {
 	const swiperRef = useRef<SwiperType>(null);
 	const [isBegining, setIsBegining] = useState(true);
 	const [isEnd, setIsEnd] =useState(false)
@@ -23,14 +24,14 @@ export const Slider = ({recipes}: Props) => {
 		swiperRef.current?.slidePrev();
 	}
 
-	if (recipes === null) {
+	if (slidesInfo === null) {
 		return;
 	}
 
 	return (
 		<section className={styles.sliderSection}>
 			<div className={styles.header}>
-				<h2 className={styles.title}>favorite recipes</h2>
+				<h2 className={styles.title}>{sliderTitle}</h2>
 				<div className={styles.arrows}>
 					<button onClick={handlePrev} disabled={isBegining}>
 						{isBegining ? <IconLeftDisabled/> : <IconLeft />}
@@ -45,6 +46,7 @@ export const Slider = ({recipes}: Props) => {
 				<Swiper
 					spaceBetween={16}
 					slidesPerView={1}
+					autoHeight={true}
 					onSwiper={(swiper) => {
 						swiperRef.current = swiper;
 						setIsBegining(swiper.isBeginning)
@@ -60,7 +62,7 @@ export const Slider = ({recipes}: Props) => {
 						}
 					}}
 				>	
-					{recipes.map(recipe => <SwiperSlide><RecipeCard recipe={recipe}/></SwiperSlide>)}
+					{slidesInfo.map(slideItem => <SwiperSlide><RecipeCard key={slideItem.id} cardInfo={slideItem}/></SwiperSlide>)}
 				</Swiper>
 			</div>
 		</section>
