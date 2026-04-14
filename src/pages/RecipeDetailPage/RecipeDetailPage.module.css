@@ -41,6 +41,7 @@
 }
 .stats {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 50px;
 	margin: 40px 0px;
 }
@@ -57,6 +58,10 @@
 	display: flex;
 	align-items: center;
 	gap: 8px;
+}
+
+.statsItem svg {
+	max-width: 24px;
 }
 
 .statsItem:not(:last-child)::after {
@@ -165,6 +170,18 @@
 	}
 }
 
+@media (max-width: 500px) {
+	.stats {
+		gap: 20px;
+	}
+	.statsItem {
+		flex-direction: column;
+	}
+	.statsItem:not(:last-child)::after {
+		display: none;
+	}
+}
+
 @media (max-width: 768px) {
 	.wrapper {
 		padding: 64px 16px;
@@ -181,6 +198,10 @@
 
 	.rightSide {
 		padding: 0;
+	}
+
+	.statsItem {
+		font-size: 14px;
 	}
 
 	.overviewTitle {

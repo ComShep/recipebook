@@ -2,7 +2,8 @@ import { useParams } from "react-router"
 import { useRecipeDetail } from "../../hooks/useRecipeDetail";
 import styles from './RecipeDetailPage.module.css'
 import { Tag } from "../../components/assets/tag/Tag";
-import { IconClock, IconServes } from "../../components/assets/icons/Icons";
+import { IconBreakfest, IconClock, IconDessert, IconDinner, IconLunch, IconServes } from "../../components/assets/icons/Icons";
+import { ItemsList } from "../../components/assets/itemsList/ItemsList";
 
 
 export const RecipeDetailPage = () => {
@@ -20,6 +21,16 @@ export const RecipeDetailPage = () => {
 			<div>Recipe not found</div>
 		)
 	}
+	
+	const categoryIcon = (category: string) => {
+		switch (category) {
+			case 'breakfast': return <IconBreakfest/>;
+			case 'lunch': return <IconLunch/>;
+			case 'dinner': return <IconDinner/>;
+			case 'dessert': return <IconDessert/>;
+			default: return <IconServes />;
+		}
+	}
 
 	return (
 		<div className={styles.wrapper}>
@@ -28,8 +39,9 @@ export const RecipeDetailPage = () => {
 				<h1 className={styles.overviewTitle}>{recipeDetail?.title}</h1>
 				<p className={styles.description}>{recipeDetail?.description}</p>
 				<div className={styles.stats}>
-					<div className={styles.statsItem}><IconClock /><span>{recipeDetail?.cookingTime} min</span></div>
-					<div className={styles.statsItem}><IconServes /><span>{recipeDetail?.servings} serves</span></div>
+					<div className={styles.statsItem}><IconClock /><span>{recipeDetail.cookingTime} min</span></div>
+					<div className={styles.statsItem}><IconServes /><span>{recipeDetail.servings} serves</span></div>
+					<div className={styles.statsItem}>{categoryIcon(recipeDetail.category)}<span>{recipeDetail.category}</span></div>
 				</div>
 				<img src={recipeDetail?.image} alt="img" />
 			</section>
@@ -40,20 +52,10 @@ export const RecipeDetailPage = () => {
 				</div>
 				<div className={styles.rightSide}>
 					<div className={styles.rightSideItem}>
-						<h3 className={styles.itemTitle}>Ingredients</h3>
-						<ul className={styles.list}>
-							{recipeDetail.ingredients.map((ingedient, index) => {
-								return <li key={index} className={styles.item}>{ingedient}</li>
-							})}
-						</ul>
+						<ItemsList items={recipeDetail.ingredients} title='Ingredients'/>
 					</div>
 					<div className={styles.rightSideItem}>
-						<h3 className={styles.itemTitle}>Equipment Needed for Preparation</h3>
-						<ul className={styles.list}>
-							{recipeDetail.equipment.map((equipment, index) => {
-								return <li key={index} className={styles.item}>{equipment}</li>
-							})}
-						</ul>
+						<ItemsList items={recipeDetail.equipment} title='Equipment Needed for Preparation'/>
 					</div>
 					<div className={styles.rightSideItem}>
 						<h3 className={styles.itemTitle}>Nutritional Value</h3>
