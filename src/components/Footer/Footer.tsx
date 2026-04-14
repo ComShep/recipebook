@@ -17,7 +17,7 @@ export const Footer = () => {
 				<nav className={styles.menu}>
 					<NavLink to="/">HOME</NavLink>
 					<NavLink to="/recipes">RESIPES</NavLink>
-					<NavLink to="/coocking-tips">cooking tips</NavLink>
+					<NavLink to="/cooking-tips">cooking tips</NavLink>
 					<NavLink to="/about">ABOUT US</NavLink>
 				</nav>
 				<div className={styles.social}>

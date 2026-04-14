@@ -42,7 +42,7 @@ export const Header = () => {
 				<nav className={styles.menu}>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/">HOME</NavLink>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/recipes">RESIPES</NavLink>
-					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/coocking-tips">cooking tips</NavLink>
+					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/cooking-tips">cooking tips</NavLink>
 					<NavLink className={({ isActive }) => isActive ? styles.active : ''} onClick={handleClickClose} to="/about">ABOUT US</NavLink>
 				</nav>
 				<div>

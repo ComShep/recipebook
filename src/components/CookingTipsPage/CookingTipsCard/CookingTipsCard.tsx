@@ -1,7 +1,7 @@
 import styles from './CookingTipsCard.module.css'
 import { Link } from 'react-router'
-import { Button } from '../components/assets/button/Button'
-import type { CookingTipsDetail } from '../types/types'
+import { Button } from '../../assets/button/Button'
+import type { CookingTipsDetail } from '../../../types/types'
 
 type Props = {
 	cardInfo: CookingTipsDetail
@@ -22,7 +22,7 @@ export const CookingTipsCard = ({cardInfo}: Props) => {
 					<div className={styles.attributes}>
 						<span>{cardInfo.time} Min</span> - <span>{cardInfo.date}</span>
 					</div>
-					<Link to={`/recipes/${cardInfo.id}`}><Button name='read more'/></Link> 
+					<Link to={`/cooking-tips/${cardInfo.id}`}><Button name='read more'/></Link> 
 				</div>
 			</div>
 		</div>

@@ -2,7 +2,8 @@ import { WelcomeCoockingTips } from "../../components/CookingTipsPage/WelcomeCoo
 import { Subscribe } from "../../components/Subscribe/Subscribe"
 import { useCookingTips } from "../../hooks/useCookingTips"
 import { Slider } from "../../components/Slider/Slider"
-import { CookingTipsCard } from "../../CookingTipsCard/CookingTipsCard"
+import { CookingTipsCard } from "../../components/CookingTipsPage/CookingTipsCard/CookingTipsCard"
+
 
 
 export const CookingTipsPage = () => {
@@ -19,8 +20,6 @@ export const CookingTipsPage = () => {
 			<div>Page not found</div>
 		)
 	}
-
-	console.log(cookingTips)
 
 	return (
 		<>
