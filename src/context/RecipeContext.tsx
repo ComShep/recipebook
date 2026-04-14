@@ -1,7 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
-import type { CoockingTips, Main, Recipe, RecipeBookContextType } from "../types/types";
-
-
+import type { CoockingTips, DetailType, Main, Recipe, RecipeBookContextType } from "../types/types";
 
 const RecipeBookContext = createContext<RecipeBookContextType | undefined>(undefined);
 
@@ -9,7 +7,7 @@ export const RecipeBookProvider = ({ children }: { children: ReactNode }) => {
 	const [recipes, setRecipes] = useState<Array<Recipe> | null>(null);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 
-	const [recipeDetail, setRecipeDetail] = useState<Recipe | null>(null)
+	const [detail, setDetail] = useState<DetailType | null>(null)
 	const [isLoadingDetail, setIsLoadingDetail] = useState<boolean>(false);
 
 	const [main, setMain] = useState <Main | null>(null);
@@ -21,12 +19,12 @@ export const RecipeBookProvider = ({ children }: { children: ReactNode }) => {
 	const returnValue = {
 		main,
 		recipes,
-		recipeDetail,
+		detail,
 		cookingTips,
 
 		setMain,
 		setRecipes,
-		setRecipeDetail,
+		setDetail,
 		setCookingTips,
 
 		isLoadingMain,

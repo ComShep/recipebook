@@ -1,5 +1,5 @@
 import { useParams } from "react-router"
-import { useRecipeDetail } from "../../hooks/useRecipeDetail";
+import { useDetail } from "../../hooks/useDetail";
 import styles from './RecipeDetailPage.module.css'
 import { Tag } from "../../components/assets/tag/Tag";
 import { IconBreakfest, IconClock, IconDessert, IconDinner, IconLunch, IconServes } from "../../components/assets/icons/Icons";
@@ -8,7 +8,7 @@ import { ItemsList } from "../../components/assets/itemsList/ItemsList";
 
 export const RecipeDetailPage = () => {
 	const { id } = useParams();
-	const { recipeDetail, isLoadingDetail } = useRecipeDetail(id);
+	const { detail, isLoadingDetail } = useDetail(id, 'recipes');
 
 	if (isLoadingDetail) {
 		return (
@@ -16,7 +16,7 @@ export const RecipeDetailPage = () => {
 		)
 	}
 
-		if (recipeDetail === null) {
+		if (detail === null) {
 		return (
 			<div>Recipe not found</div>
 		)
@@ -36,34 +36,34 @@ export const RecipeDetailPage = () => {
 		<div className={styles.wrapper}>
 			<section className={styles.overview}>
 				<Tag title="recipe" />
-				<h1 className={styles.overviewTitle}>{recipeDetail?.title}</h1>
-				<p className={styles.description}>{recipeDetail?.description}</p>
+				<h1 className={styles.overviewTitle}>{detail.title}</h1>
+				<p className={styles.description}>{detail.description}</p>
 				<div className={styles.stats}>
-					<div className={styles.statsItem}><IconClock /><span>{recipeDetail.cookingTime} min</span></div>
-					<div className={styles.statsItem}><IconServes /><span>{recipeDetail.servings} serves</span></div>
-					<div className={styles.statsItem}>{categoryIcon(recipeDetail.category)}<span>{recipeDetail.category}</span></div>
+					<div className={styles.statsItem}><IconClock /><span>{detail.cookingTime} min</span></div>
+					<div className={styles.statsItem}><IconServes /><span>{detail.servings} serves</span></div>
+					<div className={styles.statsItem}>{categoryIcon(detail.category)}<span>{detail.category}</span></div>
 				</div>
-				<img src={recipeDetail?.image} alt="img" />
+				<img src={detail.image} alt="img" />
 			</section>
 			<section className={styles.recipeInfo}>
 				<div className={styles.instruction}>
 					<h2 className={styles.instructionTitle}>Instructions</h2>
-					<p className={styles.instructionText}>{recipeDetail?.instructions}</p>
+					<p className={styles.instructionText}>{detail.instructions}</p>
 				</div>
 				<div className={styles.rightSide}>
 					<div className={styles.rightSideItem}>
-						<ItemsList items={recipeDetail.ingredients} title='Ingredients'/>
+						<ItemsList items={detail.ingredients} title='Ingredients'/>
 					</div>
 					<div className={styles.rightSideItem}>
-						<ItemsList items={recipeDetail.equipment} title='Equipment Needed for Preparation'/>
+						<ItemsList items={detail.equipment} title='Equipment Needed for Preparation'/>
 					</div>
 					<div className={styles.rightSideItem}>
 						<h3 className={styles.itemTitle}>Nutritional Value</h3>
 						<ul className={styles.nutritionalList}>
-							<li className={styles.nutritionalItem}>Calories: <span>{recipeDetail?.nutritional.calories}</span></li>
-							<li className={styles.nutritionalItem}>Protein: <span>{recipeDetail?.nutritional.protein}</span></li>
-							<li className={styles.nutritionalItem}>Total Fat: <span>{recipeDetail?.nutritional.total_fat}</span></li>
-							<li className={styles.nutritionalItem}>Carbohydrates: <span>{recipeDetail?.nutritional.carbohydrates}</span></li>
+							<li className={styles.nutritionalItem}>Calories: <span>{detail.nutritional.calories}</span></li>
+							<li className={styles.nutritionalItem}>Protein: <span>{detail.nutritional.protein}</span></li>
+							<li className={styles.nutritionalItem}>Total Fat: <span>{detail.nutritional.total_fat}</span></li>
+							<li className={styles.nutritionalItem}>Carbohydrates: <span>{detail.nutritional.carbohydrates}</span></li>
 						</ul>
 					</div>
 				</div>

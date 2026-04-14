@@ -59,16 +59,17 @@ export interface CoockingTips {
 	tips_and_tricks: Array<CookingTipsDetail>
 }
 
+export type DetailType = Recipe | CookingTipsDetail;
 
 export interface RecipeBookContextType {
 	main: Main | null,
 	recipes: Array<Recipe> | null,
-	recipeDetail: Recipe | null,
+	detail: DetailType | null,
 	cookingTips: CoockingTips | null,
 
 	setMain: (main: Main | null) => void,
 	setRecipes: (recipes: Array<Recipe> | null) => void,
-	setRecipeDetail: (recipe: Recipe | null) => void,
+	setDetail: (detail: DetailType | null) => void,
 	setCookingTips: (cookingTips: CoockingTips | null) => void,
 
 	isLoadingMain: boolean,
