@@ -1,7 +1,7 @@
-import { useRef, useState, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Grid, Pagination } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
+import { useSlider } from '../../hooks/useSlider';
 
 import { IconLeft, IconLeftDisabled, IconRight, IconRightDisabled } from '../assets/icons/Icons';
 
@@ -27,23 +27,13 @@ type Props<T extends SlideData> = {
 };
 
 export const Slider = <T extends SlideData>({ slidesInfo, sliderTitle, renderCard, rows = 1, perView = 2, border = true, backColor = false }: Props<T>) => {
-	const swiperRef = useRef<SwiperType>(null);
-	const [isBegining, setIsBegining] = useState(true);
-	const [isEnd, setIsEnd] = useState(false)
+	const {isBegining, isEnd, handleNext, handlePrev, onSwiperInit, onSlideChange} = useSlider();
 
 	const sliderSection = clsx({
 		[styles.sliderSection]: true,
 		[styles.sliderSectionBorder]: border,
 		[styles.sliderSectionBackground]: backColor
 	})
-
-	const handleNext = () => {
-		swiperRef.current?.slideNext();
-	}
-
-	const handlePrev = () => {
-		swiperRef.current?.slidePrev();
-	}
 
 	if (slidesInfo === null) {
 		return;
@@ -73,15 +63,8 @@ export const Slider = <T extends SlideData>({ slidesInfo, sliderTitle, renderCar
 						rows: 1,
 						fill: 'row'
 					}}
-					onSwiper={(swiper) => {
-						swiperRef.current = swiper;
-						setIsBegining(swiper.isBeginning)
-						setIsEnd(swiper.isEnd)
-					}}
-					onSlideChange={(swiper) => {
-						setIsBegining(swiper.isBeginning)
-						setIsEnd(swiper.isEnd)
-					}}
+					onSwiper={onSwiperInit}
+					onSlideChange={onSlideChange}
 					breakpoints={{
 						1024: {
 							slidesPerGroup: 1,
