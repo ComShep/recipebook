@@ -1,9 +1,10 @@
 import { useParams } from "react-router"
 import { useDetail } from "../../hooks/useDetail";
 import styles from './RecipeDetailPage.module.css'
-import { Tag } from "../../components/assets/tag/Tag";
-import { IconBreakfest, IconClock, IconDessert, IconDinner, IconLunch, IconServes } from "../../components/assets/icons/Icons";
+// import { Tag } from "../../components/assets/tag/Tag";
+// import { IconBreakfest, IconClock, IconDessert, IconDinner, IconLunch, IconServes } from "../../components/assets/icons/Icons";
 import { ItemsList } from "../../components/assets/itemsList/ItemsList";
+import { DetailPageOverwiew } from "../../components/DetailPage/DetailPageOverwiew/DetailPageOverwiew";
 
 
 export const RecipeDetailPage = () => {
@@ -21,31 +22,20 @@ export const RecipeDetailPage = () => {
 			<div>Recipe not found</div>
 		)
 	}
-	
-	const categoryIcon = (category: string) => {
-		switch (category) {
-			case 'breakfast': return <IconBreakfest/>;
-			case 'lunch': return <IconLunch/>;
-			case 'dinner': return <IconDinner/>;
-			case 'dessert': return <IconDessert/>;
-			default: return <IconServes />;
-		}
-	}
 
 	return (
 		<div className={styles.wrapper}>
-			<section className={styles.overview}>
-				<Tag title="recipe" />
-				<h1 className={styles.overviewTitle}>{detail.title}</h1>
-				<p className={styles.description}>{detail.description}</p>
-				<div className={styles.stats}>
-					<div className={styles.statsItem}><IconClock /><span>{detail.cookingTime} min</span></div>
-					<div className={styles.statsItem}><IconServes /><span>{detail.servings} serves</span></div>
-					<div className={styles.statsItem}>{categoryIcon(detail.category)}<span>{detail.category}</span></div>
-				</div>
-				<img src={detail.image} alt="img" />
-			</section>
-			<section className={styles.recipeInfo}>
+			<DetailPageOverwiew
+				tagTitle="recipe"
+				title={detail.title}
+				description={detail.description}
+				image={detail.image}
+				isRenderStats={true}
+				cookingTime={detail.cookingTime}
+				servings={detail.servings}
+				category={detail.category}
+			/>
+			<section className={styles.info}>
 				<div className={styles.instruction}>
 					<h2 className={styles.instructionTitle}>Instructions</h2>
 					<p className={styles.instructionText}>{detail.instructions}</p>
