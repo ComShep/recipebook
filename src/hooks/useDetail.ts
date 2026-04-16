@@ -4,7 +4,7 @@ import { getDetail } from "../api/api";
 import type { CookingTipsDetail, CookingTipsDetailResponse, Recipe, RecipeDetailResponse } from "../types/types";
 
 type SectionTypeMap = {
-  recipes: Recipe;
+  'recipes': Recipe;
   'cooking-tips': CookingTipsDetail;
 };
 

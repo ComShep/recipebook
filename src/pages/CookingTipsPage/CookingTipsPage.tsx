@@ -1,10 +1,9 @@
-import { WelcomeCoockingTips } from "../../components/CookingTipsPage/WelcomeCoockingTips"
+import { WelcomeCoockingTips } from "../../components/CookingTipsPage/WelcomeCookingTips/WelcomeCoockingTips"
 import { Subscribe } from "../../components/Subscribe/Subscribe"
 import { useCookingTips } from "../../hooks/useCookingTips"
 import { Slider } from "../../components/Slider/Slider"
 import { CookingTipsCard } from "../../components/CookingTipsPage/CookingTipsCard/CookingTipsCard"
-
-
+import { CoolingTipsNourishingCard } from "../../components/CookingTipsPage/CoolingTipsNourishingCard/CoolingTipsNourishingCard"
 
 export const CookingTipsPage = () => {
 	const { cookingTips, isLoadingCookingTips } = useCookingTips();
@@ -38,7 +37,7 @@ export const CookingTipsPage = () => {
 				sliderTitle="Nourishing Every Palate"
 				slidesInfo={cookingTips.nourishing}
 				renderCard={(recipe) => {
-					return <CookingTipsCard cardInfo={recipe} />
+					return <CoolingTipsNourishingCard cardInfo={recipe} />
 				}}
 				perView={3}
 				backColor={true}
