@@ -9,14 +9,6 @@ type Props = {
 }
 
 export const CoolingTipsNourishingCard = ({ cardInfo, subSection }: Props) => {
-	// const { setSubSection } = useRecipeBookContext();
-
-	// const handleClick = () => {
-	// 	if (subSection) {
-	// 		setSubSection(subSection)
-	// 	}
-	// }
-
 	return (
 		<div className={styles.card} style={{ 'backgroundImage': `url(${cardInfo.image})` }}>
 			<div className={styles.info}>
