@@ -24,7 +24,7 @@ export const App = () => {
 							<Route path="/about" element={<AboutPage />} />
 							<Route path="/recipes/:id" element={<RecipeDetailPage />} />
 							<Route path="/cooking-tips" element={<CookingTipsPage />} />
-							<Route path="/cooking-tips/:id" element={<CookingTipsDetailPage />} />
+							<Route path="/cooking-tips/:subSection/:id" element={<CookingTipsDetailPage />} />
 						</Routes>
 					</div>
 					<Footer />

@@ -2,7 +2,6 @@ import styles from './CoolingTipsNourishingCard.module.css'
 import { Link } from 'react-router'
 import { Button } from '../../assets/button/Button'
 import type { CookingTipsDetail, SubSectionType } from '../../../types/types'
-import { useRecipeBookContext } from '../../../context/RecipeContext'
 
 type Props = {
 	cardInfo: CookingTipsDetail,
@@ -10,13 +9,13 @@ type Props = {
 }
 
 export const CoolingTipsNourishingCard = ({ cardInfo, subSection }: Props) => {
-	const { setSubSection } = useRecipeBookContext();
+	// const { setSubSection } = useRecipeBookContext();
 
-	const handleClick = () => {
-		if (subSection) {
-			setSubSection(subSection)
-		}
-	}
+	// const handleClick = () => {
+	// 	if (subSection) {
+	// 		setSubSection(subSection)
+	// 	}
+	// }
 
 	return (
 		<div className={styles.card} style={{ 'backgroundImage': `url(${cardInfo.image})` }}>
@@ -29,7 +28,7 @@ export const CoolingTipsNourishingCard = ({ cardInfo, subSection }: Props) => {
 					<div className={styles.attributes}>
 						<span>{cardInfo.time} Min</span> - <span>{cardInfo.date}</span>
 					</div>
-					<Link to={`/cooking-tips/${cardInfo.id}`} onClick={handleClick}><Button name='read more' color='light' /></Link>
+					<Link to={`/cooking-tips/${subSection}/${cardInfo.id}`}><Button name='read more' color='light' /></Link>
 				</div>
 			</div>
 		</div>
