@@ -15,18 +15,18 @@ type BaseProps = {
 
 type Props = BaseProps & (
 	| {isRenderStats: true; cookingTime: number, servings: number, category: string}
-	| {isRenderStats: false; cookingTime: never, servings: never, category: never}
+	| {isRenderStats: false; cookingTime?: never, servings?: never, category?: never}
 )
 
 export const DetailPageOverwiew = (props: Props) => {
 	const { 
 		tagTitle, 
-		title, 
+		title,
+		image, 
 		description,
 		cookingTime,
 		servings,
 		category,
-		image,
 		isRenderStats = false
 	} = props;
 

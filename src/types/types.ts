@@ -61,16 +61,20 @@ export interface CoockingTips {
 
 export type DetailType = Recipe | CookingTipsDetail;
 
+export type SubSectionType = 'mastering' | 'nourishing' | 'tips_and_tricks'
+
 export interface RecipeBookContextType {
 	main: Main | null,
 	recipes: Array<Recipe> | null,
 	detail: DetailType | null,
 	cookingTips: CoockingTips | null,
+	subSection: SubSectionType | null,
 
 	setMain: (main: Main | null) => void,
 	setRecipes: (recipes: Array<Recipe> | null) => void,
 	setDetail: (detail: DetailType | null) => void,
 	setCookingTips: (cookingTips: CoockingTips | null) => void,
+	setSubSection: (subSection: SubSectionType | null) => void
 
 	isLoadingMain: boolean,
 	isLoading: boolean,

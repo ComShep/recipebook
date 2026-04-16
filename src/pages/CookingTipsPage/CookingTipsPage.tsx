@@ -27,7 +27,7 @@ export const CookingTipsPage = () => {
 				sliderTitle="Mastering the Basics"
 				slidesInfo={cookingTips.mastering}
 				renderCard={(recipe) => {
-					return <CookingTipsCard cardInfo={recipe} />
+					return <CookingTipsCard cardInfo={recipe} subSection='mastering'/>
 				}}
 				rows={2}
 				perView={3}
@@ -37,7 +37,7 @@ export const CookingTipsPage = () => {
 				sliderTitle="Nourishing Every Palate"
 				slidesInfo={cookingTips.nourishing}
 				renderCard={(recipe) => {
-					return <CoolingTipsNourishingCard cardInfo={recipe} />
+					return <CoolingTipsNourishingCard cardInfo={recipe} subSection='nourishing'/>
 				}}
 				perView={3}
 				backColor={true}
@@ -46,7 +46,7 @@ export const CookingTipsPage = () => {
 				sliderTitle="TIps & tricks"
 				slidesInfo={cookingTips.tips_and_tricks}
 				renderCard={(recipe) => {
-					return <CookingTipsCard cardInfo={recipe} />
+					return <CookingTipsCard cardInfo={recipe} subSection='tips_and_tricks'/>
 				}}
 				rows={2}
 				perView={3}

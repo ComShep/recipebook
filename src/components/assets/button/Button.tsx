@@ -14,6 +14,6 @@ export const Button = ({name, color = `dark`} : Props) => {
 	})
 
 	return (
-		<button className={btnClass}>{name}</button>
+		<div className={btnClass}>{name}</div>
 	)
 }
